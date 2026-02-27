@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalBite - Our Services</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f6f9;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: #ff4d4d;
+            color: white;
+        }
+
+        nav h2 {
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(to right, #ff4d4d, #ff944d);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+        /* Services Section */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 60px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: 0.4s;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            margin: 15px 0;
+            color: #ff4d4d;
+        }
+
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .btn {
+            padding: 14px 30px;
+            border: none;
+            background: #ff4d4d;
+            color: white;
+            font-size: 16px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #e60000;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+
+        /* Responsive */
+        @media(max-width:768px) {
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .services {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <h2>🍔 LocalBite</h2>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Restaurants</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Our Food Delivery Services</h1>
+        <p>Fast, Fresh & Delivered at Your Doorstep</p>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <div class="card">
+            <h3>🚀 Fast Delivery</h3>
+            <p>Get your favorite meals delivered within 30-45 minutes.</p>
+        </div>
+
+        <div class="card">
+            <h3>🍽 Multiple Restaurants</h3>
+            <p>Choose from a wide variety of local restaurants and cuisines.</p>
+        </div>
+
+        <div class="card">
+            <h3>💳 Secure Payment</h3>
+            <p>Safe online payments and cash on delivery available.</p>
+        </div>
+
+        <div class="card">
+            <h3>📦 Live Tracking</h3>
+            <p>Track your order in real-time from kitchen to doorstep.</p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <button class="btn" onclick="orderNow()">Order Now</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 LocalBite. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Button Action
+        function orderNow() {
+            alert("Redirecting to Restaurant Page...");
+        }
+
+        // Scroll Animation
+        window.addEventListener("scroll", function () {
+            let cards = document.querySelectorAll(".card");
+            let triggerBottom = window.innerHeight * 0.85;
+
+            cards.forEach(card => {
+                let cardTop = card.getBoundingClientRect().top;
+
+                if (cardTop < triggerBottom) {
+                    card.classList.add("show");
+                }
+            });
+        });
+    </script>
+
+</body>
+
+<head>
+    <meta charset="UTF-8">
+    <title>E-Commerce Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+        }
+
+        .services-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .services-section h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #ff6b6b;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .service-card p {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 15px;
+            background: #ff6b6b;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background: #e05555;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="services-section">
+        <h2>Our Services</h2>
+
+        <div class="services-container">
+
+            <div class="service-card">
+                <div class="service-icon">🚚</div>
+                <h3>Fast Delivery</h3>
+                <p>We provide quick and reliable delivery service to your doorstep within 2-3 business days.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💳</div>
+                <h3>Secure Payment</h3>
+                <p>Multiple secure payment options including eSewa, Khalti, debit/credit cards and COD.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔄</div>
+                <h3>Easy Returns</h3>
+                <p>Hassle-free 7-day return policy for damaged or incorrect products.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📞</div>
+                <h3>24/7 Support</h3>
+                <p>Our customer support team is available 24/7 to assist you anytime.</p>
+                <a href="#" class="btn">Contact Us</a>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
